@@ -1,29 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import CarsList from './components/CarsList';
+import Header from './components/Header';
 
 export default function App() {
   return (
+    
     <View style={styles.container}>
+
+      <Header />
+      <CarsList />
       
-      <View style={styles.carContainer}>
-
-        <ImageBackground 
-          source={require('./assets/images/ModelS.jpeg')}
-          style={styles.image}
-        />
-
-        <View style={styles.titles}>
-          <Text style={styles.title}>Model S</Text>
-          <Text style={styles.subtitle}>Starting at Rs. 55 Lakhs only</Text>
-        </View>
-
-
-
-      </View>
-
-
       <StatusBar style="auto" />
     </View>
+  
   );
 }
 
@@ -35,31 +25,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
-  carContainer: {
-    width: '100%',
-    height: '100%',
-  },
-
-  titles: {
-    marginTop: '30%',
-    width: '100%',
-    alignItems: 'center', 
-  },
-
-  title: {
-    fontSize: 40,
-    fontWeight: '500',
-  },
-
-  subtitle: {
-    fontSize: 16,
-    color: '#5c5e62',
-  },
-
-  image: {
-    height: '100%',
-    width: '100%',
-  },
-
 });
